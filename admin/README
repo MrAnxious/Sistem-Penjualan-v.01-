@@ -1,0 +1,120 @@
+# Sistem Penjualan Toko Jenang
+
+Sistem penjualan online untuk toko jenang dengan tampilan simpel, modern, dan memungkinkan pembelian tanpa login.
+
+## Fitur Utama
+
+### Frontend (Pelanggan)
+- Halaman Beranda dengan tampilan produk unggulan
+- Daftar produk dengan filter kategori dan harga
+- Detail produk dengan gambar, deskripsi, dan informasi lengkap
+- Keranjang belanja
+- Checkout dan pembelian tanpa login
+- Konfirmasi pembayaran
+- Invoice/faktur yang bisa diunduh/dicetak
+- Halaman tentang kami
+
+### Backend (Admin)
+- Dashboard dengan ringkasan penjualan
+- Manajemen produk (tambah, edit, hapus)
+- Manajemen kategori
+- Manajemen pesanan (detail dan update status)
+- Laporan penjualan (berdasarkan tanggal, produk, kategori, pembayaran, status)
+- Login admin dengan level akses
+
+## Struktur Folder
+
+```
+toko_jenang/
+├── admin/
+│   ├── index.php
+│   ├── dashboard.php
+│   ├── produk.php
+│   ├── tambah_produk.php
+│   ├── edit_produk.php
+│   ├── pesanan.php
+│   ├── detail_pesanan.php
+│   ├── laporan.php
+│   ├── login.php
+│   ├── logout.php
+│   └── assets/
+│       ├── css/
+│       ├── js/
+│       └── img/
+├── assets/
+│   ├── css/
+│   │   ├── style.css
+│   │   └── bootstrap.min.css
+│   ├── js/
+│   │   ├── script.js
+│   │   └── bootstrap.bundle.min.js
+│   └── img/
+│       ├── logo.png
+│       ├── products/
+│       └── uploads/
+├── config/
+│   ├── database.php
+│   ├── functions.php
+│   └── koneksi.php
+├── includes/
+│   ├── header.php
+│   ├── footer.php
+│   └── navbar.php
+├── uploads/
+│   └── bukti_pembayaran/
+├── index.php
+├── produk.php
+├── detail_produk.php
+├── keranjang.php
+├── checkout.php
+├── konfirmasi.php
+├── invoice.php
+└── tentang_kami.php
+```
+
+## Teknologi yang Digunakan
+
+- PHP (Vanilla/Native)
+- MySQL Database
+- Bootstrap 5 untuk layout dan komponen UI
+- JavaScript (Vanilla)
+- Bootstrap Icons untuk ikon
+- LocalStorage untuk keranjang belanja
+
+## Instalasi
+
+1. Buat database MySQL dengan nama `toko_jenang`
+2. Import file SQL dari `toko_jenang.sql`
+3. Sesuaikan konfigurasi database di `config/koneksi.php`
+4. Upload semua file ke server atau jalankan di localhost
+5. Pastikan direktori `uploads` dan subdirektorinya memiliki permission yang sesuai (777)
+
+## Kredensial Admin
+
+- Username: admin
+- Password: admin123
+
+## Cara Penggunaan
+
+### Frontend (Pelanggan)
+
+1. Buka halaman utama di `index.php`
+2. Lihat produk dan tambahkan ke keranjang
+3. Klik ikon keranjang untuk melihat barang yang telah dipilih
+4. Klik "Checkout" untuk proses pembelian
+5. Isi informasi pengiriman dan pilih metode pembayaran
+6. Selesaikan pembayaran dan upload bukti pembayaran di halaman konfirmasi
+7. Lihat invoice dan cetak jika diperlukan
+
+### Backend (Admin)
+
+1. Buka halaman admin di `/admin/`
+2. Login dengan kredensial yang telah disediakan
+3. Kelola produk, kategori, dan pesanan dari dashboard admin
+4. Lihat laporan penjualan dengan berbagai filter
+
+## Catatan
+
+- Sistem menggunakan LocalStorage untuk menyimpan data keranjang belanja, sehingga tidak memerlukan login untuk pembeli
+- Untuk pengembangan lebih lanjut, dapat ditambahkan fitur login pelanggan, manajemen stok otomatis, integrasi API pembayaran, dll
+- Pastikan untuk mengatur keamanan pada server produksi
